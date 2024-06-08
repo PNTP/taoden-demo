@@ -151,6 +151,9 @@
 .item a{
 	color: #000;
 }
+.item a:hover{
+	color: #000;
+}
 .item span{
     display: flex;
     font-weight: 700;
