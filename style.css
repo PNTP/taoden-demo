@@ -53,6 +53,7 @@
     text-align: center !important;
     background-image: linear-gradient(to right, #b3d6d4, #f1ecdc);
     width: 80%;
+				max-width: 1000px;
 	height: 70px;
     justify-content: space-between;
     padding: 15px 10px 15px 10px;
