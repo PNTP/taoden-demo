@@ -565,7 +565,6 @@
 /*menunew-mobile*/
 @media (max-width:900px){
 .top-header{
-	background-color: #000;
 }
 .navbar-td{
 	background-color: #000;
@@ -603,13 +602,14 @@
 		text-align: center;
 	}
 .logo img{
-	width: 50%;
+	width: 65%;
 	height: auto;
 }
 .header{
 	height: auto;
 	background-color: #000 !important;
 	padding: 10px 0px;
+	border-radius: 0px 0px 10px 10px;
 }
 .navmenu{
 	display: flex;
@@ -620,7 +620,7 @@
         display: flex;
         text-align: center !important;
         background-image: none;
-        width: 95%;
+        width: 100%;
         border-radius: 100px;
         padding: 0px;
         box-shadow: none;
@@ -628,9 +628,11 @@
         justify-content: center;
 }
 	.menu-content{
-	display: flex;
-	height: 40px;
-	margin-bottom: 10px;
+	    display: flex;
+        height: 40px;
+        margin-bottom: 10px;
+        width: 100%;
+        justify-content: center;
 }
 .menu a{
 		display: flex;
@@ -1050,15 +1052,15 @@
 	transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 .drop-cash{
-    display: flex;
+     display: flex;
     flex-direction: column;
-    margin-right: 5px;
-    align-items: flex-end;
+    align-items: center;
+    width: 100%;
 }
 .drop-cash input{
 	box-sizing: border-box;
     padding: 0;
-    width: 144px;
+    width: 200px;
     height: 40px;
     position: absolute;
     cursor: pointer;
@@ -1074,20 +1076,20 @@
 	transform: rotate(90deg);
 }
 .drop-cash ul{
-	display: flex;
-    z-index: 200;
-    box-shadow: 0px 5px 6px -3px #929292;
-    width: 100%;
-    background-color: #000;
-    transform: scaleY(0);
-    /*transform: none;*/
-    transform-origin: top;
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-    border-radius: 10px;
-    margin: 5px 0px 0px 0px;
-    flex-direction: column;
-    align-items: flex-end;
-    padding: 10px 0px 10px 10px;
+	    display: flex;
+        z-index: 200;
+        box-shadow: 0px 5px 6px -3px #929292;
+        width: 100%;
+        background-color: #000;
+        transform: scaleY(0);
+        /* transform: none; */
+        transform-origin: top;
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+        border-radius: 10px;
+        margin: 5px 0px 0px 0px;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0px 10px 10px;
 }
 .drop-cash input:checked ~ ul{
 	transform: none;
@@ -1101,8 +1103,8 @@
     text-transform: uppercase;
     font-weight: 600;
     color: #fff;
-    margin: 0px 2px 0px 2px;
-    padding: 5px 10px 5px 10px;
+    margin: 5px 2px 5px 2px;
+    padding: 5px 10px 5px 5px;
 	border: none;
 }
 .drop-cash ul a:hover{
