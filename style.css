@@ -1404,6 +1404,7 @@
     justify-content: center;
 	cursor: pointer;
 	appearance: none;
+	padding: 0px 20px;
 	}
 .choise-service-select a{
 		position: absolute;
