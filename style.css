@@ -1180,12 +1180,12 @@
     opacity: 0;
 	z-index: 2;
 }
-.drop-cash input:checked ~ .buton-cash{
+.drop-cash input:hover ~ .buton-cash{
 	background-color: #000;
 	border: 2px solid #000;
 	filter: invert(1);
 }
-.drop-cash input:checked ~ .buton-cash span{
+.drop-cash input:hover ~ .buton-cash span{
 	transform: rotate(90deg);
 }
 .drop-cash ul{
@@ -1204,7 +1204,7 @@
         align-items: center;
         padding: 10px 0px 10px 10px;
 }
-.drop-cash input:checked ~ ul{
+.drop-cash input:hover ~ ul{
 	transform: none;
 }
 .drop-cash ul a{
