@@ -1405,9 +1405,8 @@
 padding: 0px 30px 0px 30px;
 	}
 .choise-service-select a{
-		position: absolute;
+	position: absolute;
     color: #fff;
-    transform: rotate(-90deg);
     margin: 0px 20px 0px 10px;
 	}
 .service-select-tittle{
