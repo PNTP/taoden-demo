@@ -722,7 +722,6 @@
 	height: auto;
 	background-color: #000 !important;
 	padding: 10px 0px;
-	border-radius: 0px 0px 10px 10px;
 }
 .navmenu{
 	display: flex;
@@ -1180,12 +1179,12 @@
     opacity: 0;
 	z-index: 2;
 }
-.drop-cash input:hover ~ .buton-cash{
+.drop-cash input:checked ~ .buton-cash{
 	background-color: #000;
 	border: 2px solid #000;
 	filter: invert(1);
 }
-.drop-cash input:hover ~ .buton-cash span{
+.drop-cash input:checked ~ .buton-cash span{
 	transform: rotate(90deg);
 }
 .drop-cash ul{
@@ -1198,13 +1197,12 @@
         /* transform: none; */
         transform-origin: top;
         transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-        border-radius: 10px;
         margin: 5px 0px 0px 0px;
         flex-direction: column;
         align-items: center;
         padding: 10px 0px 10px 10px;
 }
-.drop-cash input:hover ~ ul{
+.drop-cash input:checked ~ ul{
 	transform: none;
 }
 .drop-cash ul a{
