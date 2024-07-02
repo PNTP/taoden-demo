@@ -674,6 +674,14 @@
 	.service-select-tittle{
 		display: none;
 	}
+	.box-seach{
+	width: 100%;
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 7px 10px;
+    font-size: 16px;
+    margin: 5px 0px 10px 0px;
+	}
 }
 /*menunew-mobile*/
 @media (max-width:900px){
