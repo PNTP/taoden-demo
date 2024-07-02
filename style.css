@@ -49,7 +49,6 @@
     justify-content: center;
 }
 .menu{
-	z-index: 2;
 	display: flex;
     text-align: center !important;
     background-image: linear-gradient(to right, #b3d6d4, #f1ecdc);
