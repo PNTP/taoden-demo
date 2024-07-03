@@ -1252,7 +1252,7 @@
         const searchTerm = normalizeString(searchInput.value.toLowerCase());
 
         productItems.forEach((item) => {
-            const productName = normalizeString(item.querySelector('.product-h5').textContent.toLowerCase());
+            const productName = normalizeString(item.querySelector('h3').textContent.toLowerCase());
             if (productName.includes(searchTerm)) {
                 item.style.display = 'block'; // Hiển thị sản phẩm
             } else {
@@ -1268,6 +1268,7 @@
         });
     });
 </script>
+
 
 	
 <style>
