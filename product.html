@@ -1238,21 +1238,21 @@
 	
 </script>
 
-	<script>
+<script>
     const searchInput = document.getElementById('timkiemInput');
     const clearButton = document.getElementById('clearButton');
     const productItems = document.querySelectorAll('.product-taps');
 
-    // Hàm loại bỏ dấu tiếng Việt
-    function removeVietnameseAccents(str) {
-        return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    // Hàm loại bỏ dấu tiếng Việt và ký tự đặc biệt
+    function normalizeString(str) {
+        return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^\w\s]/g, '');
     }
 
     searchInput.addEventListener('input', () => {
-        const searchTerm = removeVietnameseAccents(searchInput.value.toLowerCase());
+        const searchTerm = normalizeString(searchInput.value.toLowerCase());
 
         productItems.forEach((item) => {
-            const productName = removeVietnameseAccents(item.querySelector('.product-h5').textContent.toLowerCase());
+            const productName = normalizeString(item.querySelector('.product-h5').textContent.toLowerCase());
             if (productName.includes(searchTerm)) {
                 item.style.display = 'block'; // Hiển thị sản phẩm
             } else {
@@ -1265,9 +1265,6 @@
         searchInput.value = ''; // Xoá nội dung tìm kiếm
         productItems.forEach((item) => {
             item.style.display = 'block'; // Hiển thị lại tất cả sản phẩm
-        });
-    });
-</script>
 	
 <style>
     a, a:hover{
