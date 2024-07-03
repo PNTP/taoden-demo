@@ -16,7 +16,7 @@
 
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/main.css">
 
 </head>
 
@@ -38,15 +38,16 @@
         <div class="navmenu">
             <div class="menu">
 				<div class="menu-content">
+				<a class="buton-tf" href="product">Đặt Hàng</a>
+				<div class="gr-button">
 				<button type="button" data-toggle="modal" data-target="#fundModal">
                     $ NẠP TIỀN
                 </button>
-                <a class="buton-tf" href="product">Đặt Hàng</a>
-
                 <a class="buton-tf" href="http://taoden.test/imei">Đơn Hàng</a>
 				</div>
+				</div>
 				<div class="menu-content" style="display: none">
-                <a class="buton-tf" href="login">Đăng Nhập</a>
+                <a class="buton-tf" href="http://taoden.test/login">Đăng Nhập</a>
                 <a class="buton-or" href="http://taoden.test/register">Đăng Ký</a>
 				</div>
 				<div class="menu-content">
@@ -66,7 +67,7 @@
 						<a href="https://taoden.test/updatepassword">Đổi Mật Khẩu</a>
 						<div class="taikhoan">
 						<img src="https://tao01.vn/wp-content/uploads/2024/06/out.png">
-						<a href="index">Đăng Xuất</a>
+						<a href="http://taoden.test/register">Đăng Xuất</a>
 						</div>
 						</ul>
 					</div>
@@ -106,7 +107,6 @@
 <div class="choise-service">
 <ul id="timkiem">
 <h2>Chọn dịch vụ bạn cần</h2>
-	<input class="box-seach" type="text" id="searchInput" onkeyup="filterSelect()" placeholder="Tìm kiếm...">
 	<li id="allButton" class="menulinks active" onclick="showAllContent()">
 		<a>Tất cả dịch vụ</a>
 	</li>
@@ -223,7 +223,12 @@
 </select>
 <img src="https://tao01.vn/wp-content/uploads/2024/07/search-icon-2044x2048-psdrpqwp.png">
 </div>
+	
 <div class="choise-product">
+	<div class="cnt-seach">
+	<input class="box-seach" type="text" id="timkiemInput" placeholder="Tìm kiếm...">
+	<button class="clearbutton" id="clearButton">Xóa</button>
+	</div>
     <div id="Check siêu tốc" class="product-taps">
         <div class="Product-item">
     <h5 class="product-header bg-danger text-white">CHECK SIÊU TỐC - REALTIME</h5>
@@ -1233,25 +1238,37 @@
 	
 </script>
 
-<script>
-function filterSelect() {
-  var input, filter, ul, li, i, txtValue;
-  input = document.getElementById("searchInput");
-  filter = input.value.toUpperCase();
-  ul = document.getElementById("timkiem");
-  li = ul.getElementsByTagName("li");
+	<script>
+    const searchInput = document.getElementById('timkiemInput');
+    const clearButton = document.getElementById('clearButton');
+    const productItems = document.querySelectorAll('.product-taps');
 
-  for (i = 0; i < li.length; i++) {
-    txtValue = li[i].textContent || li[i].innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = "";
-    } else {
-      li[i].style.display = "none";
+    // Hàm loại bỏ dấu tiếng Việt
+    function removeVietnameseAccents(str) {
+        return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     }
-  }
-}
-</script>
 
+    searchInput.addEventListener('input', () => {
+        const searchTerm = removeVietnameseAccents(searchInput.value.toLowerCase());
+
+        productItems.forEach((item) => {
+            const productName = removeVietnameseAccents(item.querySelector('.product-h5').textContent.toLowerCase());
+            if (productName.includes(searchTerm)) {
+                item.style.display = 'block'; // Hiển thị sản phẩm
+            } else {
+                item.style.display = 'none'; // Ẩn sản phẩm
+            }
+        });
+    });
+
+    clearButton.addEventListener('click', () => {
+        searchInput.value = ''; // Xoá nội dung tìm kiếm
+        productItems.forEach((item) => {
+            item.style.display = 'block'; // Hiển thị lại tất cả sản phẩm
+        });
+    });
+</script>
+	
 <style>
     a, a:hover{
         color: #4a4a4a;
